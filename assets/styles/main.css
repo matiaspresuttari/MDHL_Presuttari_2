@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------- */
+/* ------------- General ------------- */
+/* ----------------------------------- */
+
+.nav-link{
+    border-style: solid;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-top: .4rem;
+    margin-bottom: .2rem;
+    text-align: center;
+}
+
+.hamburguesa{
+    margin-top: .4rem;
+    margin-bottom: .2rem;
+}
+
+nav{
+    background-color: #1227a2;
+}
+
+.espaciado{
+    justify-content: space-between;
+    padding: 0.7rem 10%;
+    background-color: #55cab2;
+}
+
+footer{
+    min-height: 4vh;
+    background-color: #1227a2;
+    padding-top: 0.8rem;
+    position: fixed;
+    bottom: 0;
+}
+
+body{
+    background-color: rgb(186, 219, 222);
+}
+
+th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: .5rem;
+}
+
+th{
+    background-color: rgb(152, 217, 223);
+}
+
+
+
+/* --------------------------------- */
+/* ----------- home.html ----------- */
+/* --------------------------------- */
+
+.contenedor1{
+    padding: 1rem;
+}
+
+.contenedor1 label{
+    padding-top: 6px;
+    padding-right: 1rem;
+}
+
+.area-texto{
+    border-radius: 0 !important;
+    margin-left: 5vw;
+    border-style: solid;
+    border-color: #2a075b;
+    width: 20vw;
+}
+
+.contenedor2{
+    gap: .5rem !important;
+    padding-bottom: 5rem;
+}
+
+
+
+/* ---------------------------------- */
+/* ------ upcoming_events.html ------ */
+/* ---------------------------------- */
+
+
+/* ---------------------------------- */
+/* ---------- contact.html ---------- */
+/* ---------------------------------- */
+
+.contact-form{
+    flex-direction: column;
+    align-content: center;
+    padding: 1rem;
+}
+
+.contact-form>label{
+    padding-top: .2rem;
+}
+
+.contact-form>button{
+    margin-top: .4rem;
+    height: 2rem;
+    align-self: flex-end;
+    width: 5rem;
+}
+
+
+
+/* ---------------------------------- */
+/* ---------- details.html ---------- */
+/* ---------------------------------- */
+
+.contenedor3{
+    margin: 5%;
+    gap: 2rem;
+    padding: 5%;
+}
+
+.contenedor3-texto{
+    padding: 1rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

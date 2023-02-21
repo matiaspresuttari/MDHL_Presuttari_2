@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <title>Amazing Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container-fluid">
+                <div class="">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assets/images/logo.png" alt="logo" width="130" id="logo">
+                    </a>
+                </div>
+                <button class="navbar-toggler hamburguesa" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./upcoming_events.html">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./past_events.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./stats.html">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="espaciado d-flex">
+            <h1><a class="navbar-brand" href="./past_events.html"><</a></h1>
+            <h1>Contact us</h1>
+            <h1><a class="navbar-brand" href="./stats.html">></a></h1>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <form class="d-flex flex-wrap justify-content-center contact-form">
+                <label for="Name">Name:</label>
+                <input type="text" name="Name" id="Name">
+                <label for="Email">Email:</label>
+                <input type="email" name="Email" id="Email">
+                <label for="Mesagge">Mesagge:</label>
+                <textarea name="message" id="Mesagge" rows="10" cols="30"></textarea>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="container-fluid d-flex text-white justify-content-center align-items-center">
+        <p>Mindhub Front-End | Cohort 15 &reg; | Presuttari Matías</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
