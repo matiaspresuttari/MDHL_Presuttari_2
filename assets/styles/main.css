@@ -71,7 +71,6 @@ th{
 
 .area-texto{
     border-radius: 0 !important;
-    margin-left: 5vw;
     border-style: solid;
     border-color: #2a075b;
     width: 20vw;
@@ -80,6 +79,10 @@ th{
 .contenedor2{
     gap: .5rem !important;
     padding-bottom: 5rem;
+}
+
+.card-img-top{
+    height: 12rem;
 }
 
 
