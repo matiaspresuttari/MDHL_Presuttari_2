@@ -34,10 +34,12 @@ nav{
 
 footer{
     min-height: 4vh;
-    background-color: #1227a2;
-    padding-top: 0.8rem;
+    background-color: #55cab2;
+    padding-top: 0.6rem;
     position: fixed;
     bottom: 0;
+    font-weight: bold;
+    justify-content: space-between;
 }
 
 body{
