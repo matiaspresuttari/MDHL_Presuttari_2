@@ -23,7 +23,7 @@
 }
 
 nav{
-    background-color: #1227a2;
+    background-color: #091767;
 }
 
 .espaciado{
@@ -44,6 +44,7 @@ footer{
 
 body{
     background-color: rgb(186, 219, 222);
+    padding-top: 22vh;
 }
 
 th, td {
@@ -54,6 +55,16 @@ th, td {
 
 th{
     background-color: rgb(152, 217, 223);
+}
+
+.card{
+    background-color: rgb(190, 209, 245);
+    transition: box-shadow 1s;
+}
+
+.card:hover{
+    transition: box-shadow 1s;
+    box-shadow: -3px -3px 10px rgba(0, 0, 0, 0.594);
 }
 
 
