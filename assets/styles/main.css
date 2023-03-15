@@ -67,6 +67,10 @@ th{
     box-shadow: -3px -3px 10px rgba(0, 0, 0, 0.594);
 }
 
+.btn-info{
+    background-color: #7cddca;
+}
+
 
 
 /* --------------------------------- */
@@ -117,13 +121,14 @@ th{
 
 .contact-form>label{
     padding-top: .2rem;
+    width: 30vw;
 }
 
 .contact-form>button{
     margin-top: .4rem;
     height: 2rem;
     align-self: flex-end;
-    width: 5rem;
+    width: 7rem;
 }
 
 
@@ -146,4 +151,12 @@ th{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+#detail_card{
+    margin-top: -3rem;
+}
+
+#detail_card p{
+    margin-bottom:-1px;
 }
