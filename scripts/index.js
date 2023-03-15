@@ -2,14 +2,8 @@ const divElementos = document.getElementById('elementos')
 const divCheck = document.getElementById('containerCheck')
 const input = document.querySelector('input')
 
-input.addEventListener('input',()=>{
-    let arrayFiltrado=filtrarPorTexto(data.events,input.value)
-    crearCards(arrayFiltrado)
-})
-
-divCheck.addEventListener('change',()=>{
-    console.log('cambiando');
-})
+input.addEventListener('input',filtro)
+divCheck.addEventListener('change',filtro)
 
 
 crearCards(data.events)
@@ -27,8 +21,8 @@ function crearCards(array){
                 <p class="card-text">${event.date}</p>
             </div>
             <div class="card-footer d-flex flex-wrap flex-column ">
-                <small>Price: $${event.price}</small>
-                <a href="./details.html?id=${event._id}" type="button" class="btn btn-info mt-2">Details</a>
+                <small><b>Price:</b> $${event.price}</small>
+                <a href="./details.html?id=${event._id}" type="button" class="btn btn-info mt-2"><b>Details</b></a>
             </div>
         </div>`
     })
@@ -41,10 +35,10 @@ function crearChecks(array){
     let categories = Array.from(setCategories)
     let checkboxes=''
     categories.forEach(category => {
-        checkboxes+=`<label>
-            <input type="checkbox">
-                ${category}
-        </label>`
+        checkboxes+=`<div>
+                    <input type="checkbox" class='form-check-input' id='${category}' value='${category}'>
+                    <label class='form-check-label' for='${category}'>${category}</label>
+                </div>`
     })
     divCheck.innerHTML=checkboxes
 }
@@ -58,5 +52,16 @@ function filtrarPorNombre(array){
     let checkboxes=document.querySelectorAll("input[type='checkbox']")
     let arrayChecks = Array.from(checkboxes)
     let arrayChecked = arrayChecks.filter(check=>check.checked)
-    console.log(arrayChecked);
+    let arrayCheckedValues = arrayChecked.map(checkChecked=>checkChecked.value)
+    let arrayFiltrado = array.filter(elemento=>arrayCheckedValues.includes(elemento.category))
+    if (arrayChecked.length>0) {
+        return arrayFiltrado
+    }
+    return array
+}
+
+function filtro(){
+    let primerFiltro=filtrarPorTexto(data.events,input.value)
+    let segundoFiltro=filtrarPorNombre(primerFiltro)
+    crearCards(segundoFiltro)
 }

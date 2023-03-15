@@ -23,18 +23,18 @@
 }
 
 nav{
-    background-color: #091767;
+    background-color: #0bd3ab;
 }
 
 .espaciado{
     justify-content: space-between;
     padding: 0.7rem 10%;
-    background-color: #55cab2;
+    background-color: #87e1cf;
 }
 
 footer{
     min-height: 4vh;
-    background-color: #55cab2;
+    background-color: #87e1cf;
     padding-top: 0.6rem;
     position: fixed;
     bottom: 0;
@@ -43,8 +43,9 @@ footer{
 }
 
 body{
-    background-color: rgb(186, 219, 222);
+    background-color: rgb(217, 217, 217);
     padding-top: 22vh;
+    padding-bottom: 5vh;
 }
 
 th, td {
@@ -58,8 +59,10 @@ th{
 }
 
 .card{
-    background-color: rgb(190, 209, 245);
+    background-color: rgb(228, 250, 241);
     transition: box-shadow 1s;
+    border: solid;
+    border-width: 1px;
 }
 
 .card:hover{
@@ -68,9 +71,19 @@ th{
 }
 
 .btn-info{
-    background-color: #7cddca;
+    background-color: #acfae9;
+    border-color: rgb(146, 146, 146);
 }
 
+.form-check-input{
+    border: solid;
+    border-width: 2px;
+    
+}
+
+a{
+    font-weight: bold;
+}
 
 
 /* --------------------------------- */
@@ -79,18 +92,23 @@ th{
 
 .contenedor1{
     padding: 1rem;
+    padding-top: 2rem;
 }
 
 .contenedor1 label{
-    padding-top: 6px;
     padding-right: 1rem;
+    padding-left: 0.5rem;
+}
+
+#containerCheck{
+    padding-top: 0.4rem;
 }
 
 .area-texto{
     border-radius: 0 !important;
     border-style: solid;
     border-color: #2a075b;
-    width: 20vw;
+    width: 15rem;
 }
 
 .contenedor2{
