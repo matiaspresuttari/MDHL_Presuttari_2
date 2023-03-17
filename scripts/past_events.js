@@ -2,13 +2,19 @@ const divElementos = document.getElementById('elementos')
 const divCheck = document.getElementById('containerCheck')
 const input = document.querySelector('input')
 
-input.addEventListener('input',filtro)
-divCheck.addEventListener('change',filtro)
-
-
-crearCards(data.events)
-crearChecks(data.events)
-filtrarPorNombre(data.events)
+let data=[]
+function traerData() {
+    fetch('https://mindhub-xj03.onrender.com/api/amazing')
+    .then(response=>response.json())
+    .then(api=>{
+        data=api.events
+        input.addEventListener('input',filtro)
+        divCheck.addEventListener('change',filtro)
+        crearCards(data)
+        crearChecks(data)
+    }) 
+}
+traerData()
 
 function crearCards(array){
     
@@ -64,7 +70,7 @@ function filtrarPorNombre(array){
 }
 
 function filtro(){
-    let primerFiltro=filtrarPorTexto(data.events,input.value)
+    let primerFiltro=filtrarPorTexto(data,input.value)
     let segundoFiltro=filtrarPorNombre(primerFiltro)
     crearCards(segundoFiltro)
 }
