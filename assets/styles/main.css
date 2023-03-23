@@ -55,7 +55,9 @@ th, td {
 }
 
 th{
-    background-color: rgb(152, 217, 223);
+    background-color: rgb(102, 194, 202);
+    text-align: center;
+    font-weight: 800;
 }
 
 .card{
@@ -84,6 +86,16 @@ th{
 a{
     font-weight: bold;
 }
+
+table{
+    margin-bottom: 2rem;
+}
+
+tr{
+    background-color: rgb(195, 194, 194);
+}
+
+
 
 
 /* --------------------------------- */
@@ -173,8 +185,40 @@ a{
 
 #detail_card{
     margin-top: -3rem;
+    background-color: rgb(170, 221, 215);
 }
 
 #detail_card p{
-    margin-bottom:-1px;
+    margin-bottom:-10px;
 }
+
+#card-font{
+    font-size: larger;
+}
+
+.body-size{
+    width: 100vw;
+    height: 90vh;
+}
+
+@media (max-width: 440px) {
+    #detail_card{
+        height: 100vh !important; 
+    }
+    .body-size{
+        width: 100vw;
+        height: 120vh;
+    }
+}
+
+
+
+/* ---------------------------------- */
+/* ----------- stats.html ----------- */
+/* ---------------------------------- */
+
+.subCategory{
+    background-color: rgb(147, 218, 225);
+    width: 25vw;
+}
+

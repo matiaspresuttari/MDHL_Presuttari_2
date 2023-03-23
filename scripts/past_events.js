@@ -2,7 +2,9 @@ const divElementos = document.getElementById('elementos')
 const divCheck = document.getElementById('containerCheck')
 const input = document.querySelector('input')
 
-let data=[]
+let date = 20230320
+traerData()
+
 function traerData() {
     fetch('https://mindhub-xj03.onrender.com/api/amazing')
     .then(response=>response.json())
@@ -14,28 +16,44 @@ function traerData() {
         crearChecks(data)
     }) 
 }
-traerData()
 
 function crearCards(array){
-    
-    let tarjetas = ''
-    array.forEach(event=>{
-        if (event.date[3] < 2) {
-            tarjetas += `<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="${event.image}">
-                <div class="card-body d-flex flex-wrap">
-                    <h5 class="card-title">${event.name}</h5>
-                    <p class="card-text">${event.description}</p>
-                    <p class="card-text">${event.date}</p>
-                </div>
-                <div class="card-footer d-flex flex-wrap flex-column ">
-                    <small>Price: $${event.price}</small>
-                    <a href="./details.html?id=${event._id}" type="button" class="btn btn-info mt-2">Details</a>
-                </div>
-            </div>`
-        }
-    })
-    divElementos.innerHTML = tarjetas
+    if (array.length==0) {
+        let tarjetas = `<div class="card mt-2" style="width: 25rem;">
+            <div class="card-body d-flex flex-wrap justify-content-center">
+                <h5 class="card-title">No results.</h5>
+            </div>
+        </div>`
+        divElementos.innerHTML = tarjetas
+    } else {
+        let tarjetas = ''
+        array.forEach(event=>{
+            let eventDateArray=[]
+            cont=0
+            for (let index = 0; index < 10; index++) {
+                if (index!=4 && index!=7) {
+                    eventDateArray[cont]=event.date[index]
+                    cont++
+                }
+            }
+            let eventDate = eventDateArray.join('');
+            if (eventDate<date) {
+                tarjetas += `<div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="${event.image}">
+                    <div class="card-body d-flex flex-wrap">
+                        <h5 class="card-title">${event.name}</h5>
+                        <p class="card-text">${event.description}</p>
+                        <p class="card-text">${event.date}</p>
+                    </div>
+                    <div class="card-footer d-flex flex-wrap flex-column ">
+                        <small>Price: $${event.price}</small>
+                        <a href="./details.html?id=${event._id}" type="button" class="btn btn-info mt-2">Details</a>
+                    </div>
+                </div>`
+            }
+        })
+        divElementos.innerHTML = tarjetas
+    }
 }
 
 function crearChecks(array){

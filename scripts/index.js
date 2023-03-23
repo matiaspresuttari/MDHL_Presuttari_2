@@ -3,6 +3,8 @@ const divCheck = document.getElementById('containerCheck')
 const input = document.querySelector('input')
 
 let data=[]
+traerData()
+
 function traerData() {
     fetch('https://mindhub-xj03.onrender.com/api/amazing')
     .then(response=>response.json())
@@ -12,27 +14,45 @@ function traerData() {
         divCheck.addEventListener('change',filtro)
         crearCards(data)
         crearChecks(data)
+    /* 
+    fetch('./amazing.json')
+    .then(response=>response.json())
+    .then(api=>{
+        data=api.events
+        input.addEventListener('input',filtro)
+        divCheck.addEventListener('change',filtro)
+        crearCards(data)
+        crearChecks(data)
+    */
     }) 
 }
-traerData()
 
 function crearCards(array){
-    let tarjetas = ''
-    array.forEach(event=>{
-        tarjetas += `<div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="${event.image}">
-            <div class="card-body d-flex flex-wrap">
-                <h5 class="card-title">${event.name}</h5>
-                <p class="card-text">${event.description}</p>
-                <p class="card-text">${event.date}</p>
-            </div>
-            <div class="card-footer d-flex flex-wrap flex-column ">
-                <small><b>Price:</b> $${event.price}</small>
-                <a href="./details.html?id=${event._id}" type="button" class="btn btn-info mt-2"><b>Details</b></a>
+    if (array.length==0) {
+        let tarjetas = `<div class="card mt-2" style="width: 25rem;">
+            <div class="card-body d-flex flex-wrap justify-content-center">
+                <h5 class="card-title">No results.</h5>
             </div>
         </div>`
-    })
-    divElementos.innerHTML = tarjetas
+        divElementos.innerHTML = tarjetas
+    } else {
+        let tarjetas = ''
+        array.forEach(event=>{
+            tarjetas += `<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="${event.image}">
+                <div class="card-body d-flex flex-wrap">
+                    <h5 class="card-title">${event.name}</h5>
+                    <p class="card-text">${event.description}</p>
+                    <p class="card-text">${event.date}</p>
+                </div>
+                <div class="card-footer d-flex flex-wrap flex-column ">
+                    <small><b>Price:</b> $${event.price}</small>
+                    <a href="./details.html?id=${event._id}" type="button" class="btn btn-info mt-2"><b>Details</b></a>
+                </div>
+            </div>`
+        })
+        divElementos.innerHTML = tarjetas
+    }
 }
 
 function crearChecks(array){
@@ -71,3 +91,5 @@ function filtro(){
     let segundoFiltro=filtrarPorNombre(primerFiltro)
     crearCards(segundoFiltro)
 }
+
+console.log(data);
