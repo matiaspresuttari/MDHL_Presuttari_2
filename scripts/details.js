@@ -42,7 +42,7 @@ function detallar(){
     } else {
         card.innerHTML = `
         <div class="card d-flex flex-wrap justify-content-between" id='detail_card' style="width:90vw; height:70vh;">
-            <div class='d-flex justify-content-center align-items-center p-3' style='background-color:red; width:40%; height:100%;'>
+            <div class='d-flex justify-content-center align-items-center p-3' style=' width:40%; height:100%;'>
                 <img class="card-img" style='' src="${eventData.image}">
             </div>
             <div class="card-body d-flex flex-column justify-content-between gap-3" style="width:60%;">
